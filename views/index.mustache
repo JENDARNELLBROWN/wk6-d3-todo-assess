@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>To Do List</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div class="container">
+    <form action="/" method="post">
+      <p>
+        <label for="new-task">Add Item</label>
+        <input name="newTask" id="new-task" type="text">
+        <button name="action" value="Add">Add</button>
+      </p>
+    </form>
+    <h3>Todo</h3>
+    <ul id="incomplete-tasks">
+      {{#incompleteTasks}}
+      <form action="/" method="post">
+        <li>
+          <input type="hidden" name="id" value="{{id}}" />
+          <input type="checkbox" name="action" value="Complete" onChange="this.form.submit()"><label>{{title}}</label>
+          <input
+            type="text">
+            <button class="edit" name="action" value="Edit">Edit</button>
+            <button class="delete" name="action" value="Delete">Delete</button>
+        </li>
+      </form>
+      {{/incompleteTasks}}
+    </ul>
+    <h3>Completed</h3>
+    <ul id="completed-tasks">
+      {{#completeTasks}}
+      <form action="/" method="post">
+        <li>
+          <input type="hidden" name="id" value="{{id}}" />
+          <input type="checkbox" checked readonly="readonly"><label>{{title}}</label><input type="text">
+          <button class="edit" name="action" value="Edit">Edit</button>
+          <button class="delete" name="action" value="Delete">Delete</button>
+        </li>
+      </form>
+      {{/completeTasks}}
+    </ul>
+  </div>
+  </form>
+</body>
+
+</html>

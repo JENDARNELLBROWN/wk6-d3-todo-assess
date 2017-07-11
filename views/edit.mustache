@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>To Do List</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div class="container">
+    <form action="/update" method="post">
+      <p>
+        <label for="new-task">Edit Item</label>
+          <input type="hidden" name="id" value="{{id}}" />
+        <input name="editTask" id="edit-task" type="text" value="{{title}}">
+        <button name="action" value="edit">Update</button>
+      </p>
+    </form>
+  </div>
+  </form>
+</body>
+
+</html>
